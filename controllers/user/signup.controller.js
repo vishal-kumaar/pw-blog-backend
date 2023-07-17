@@ -1,6 +1,7 @@
 import asyncHandler from "../../utils/asyncHandler";
 import CustomError from "../../utils/CustomError";
 import User from "../../schemas/user.schema";
+import cookieOptions from "../../utils/cookieOptions";
 
 /********************************************************
  * @SIGNUP
@@ -33,6 +34,7 @@ const signUp = asyncHandler(async (req, res) => {
   await user.save();
   user.password = undefined;
 
+  res.cookie("token", token, cookieOptions);
   res.status(200).json({
     success: true,
     message: "User created successfully",
