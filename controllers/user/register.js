@@ -12,10 +12,6 @@ import User from "../../schemas/user.schema.js";
  *********************************************************/
 
 const register = asyncHandler(async (req, res) => {
-  if (req.user){
-    throw new CustomError("Already logged in", 303);
-  }
-
   const { name, email, password } = req.body;
 
   if (!name || !email || !password) {
