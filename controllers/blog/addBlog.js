@@ -24,7 +24,7 @@ const addBlog = asyncHanlder(async (req, res) => {
     desc,
     imgUrl,
     content,
-    userId: user._id,
+    authorId: user._id,
   });
 
   if (!blog) {
