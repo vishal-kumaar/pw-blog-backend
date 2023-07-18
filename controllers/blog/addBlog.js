@@ -12,6 +12,7 @@ import Blog from "../../schemas/blog.schema.js";
  ************************************************/
 
 const addBlog = asyncHanlder(async (req, res) => {
+  const {user} = req;
   const { title, desc, imgUrl, content } = req.body;
 
   if (!title || !imgUrl || !content) {
@@ -23,7 +24,7 @@ const addBlog = asyncHanlder(async (req, res) => {
     desc,
     imgUrl,
     content,
-    userId: req.user._id,
+    userId: user._id,
   });
 
   if (!blog) {

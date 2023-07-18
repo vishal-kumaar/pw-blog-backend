@@ -26,7 +26,7 @@ const updateBlog = asyncHanlder(async (req, res) => {
     throw new CustomError("Blog not found", 404);
   }
 
-  if (blog.userId !== user._id){
+  if (blog.authorId !== user._id){
     throw new CustomError("You don't have permission to update this blog.", 403)
   }
 
