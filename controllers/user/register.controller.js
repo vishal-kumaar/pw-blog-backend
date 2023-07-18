@@ -1,17 +1,18 @@
-import asyncHandler from "../../utils/asyncHandler";
-import CustomError from "../../utils/CustomError";
-import User from "../../schemas/user.schema";
-import cookieOptions from "../../utils/cookieOptions";
+import asyncHandler from "../../utils/asyncHandler.js";
+import CustomError from "../../utils/CustomError.js";
+import User from "../../schemas/user.schema.js";
+import cookieOptions from "../../utils/cookieOptions.js";
 
 /********************************************************
- * @SIGNUP
- * @route https://localhost:4000/api/auth/signup
- * @description User signup controller for creating a new user
+ * @REGISTER
+ * @method POST
+ * @route /api/user/register
+ * @description User register controller for creating a new user
  * @parameters name, email, password
  * @return User Object
  *********************************************************/
 
-const signUp = asyncHandler(async (req, res) => {
+const register = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
   if (!name || !email) {
@@ -43,4 +44,4 @@ const signUp = asyncHandler(async (req, res) => {
   });
 });
 
-export default signUp;
+export default register;

@@ -1,8 +1,9 @@
-import asyncHandler from "../../utils/asyncHandler";
+import asyncHandler from "../../utils/asyncHandler.js";
 
 /********************************************************
  * @LOGOUT
- * @route https://localhost:4000/api/auth/logout
+ * @method GET
+ * @route /api/user/logout
  * @description User logout by clearing user cookies
  * @parameters none
  * @return Success message

@@ -8,14 +8,14 @@ const blogSchema = new mongoose.Schema(
       maxLength: [70, "Title must be atmost 70 character"],
       trim: true,
     },
-    subtitle: {
+    desc: {
       type: String,
-      maxLength: [100, "Title must be atmost 100 character"],
+      maxLength: [100, "Description must be atmost 100 character"],
       trim: true,
     },
     imgUrl: {
       type: String,
-      required: [true, "Image is required"],
+      required: [true, "Image url is required"],
       trim: true,
     },
     content: {

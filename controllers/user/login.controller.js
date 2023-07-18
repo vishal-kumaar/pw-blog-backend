@@ -1,11 +1,12 @@
-import asyncHandler from "../../utils/asyncHandler";
-import CustomError from "../../utils/CustomError";
-import User from "../../schemas/user.schema";
-import cookieOptions from "../../utils/cookieOptions";
+import asyncHandler from "../../utils/asyncHandler.js";
+import CustomError from "../../utils/CustomError.js";
+import User from "../../schemas/user.schema.js";
+import cookieOptions from "../../utils/cookieOptions.js";
 
 /********************************************************
  * @LOGIN
- * @route https://localhost:4000/api/auth/login
+ * @method POST
+ * @route /api/user/login
  * @description User login controller for login a user
  * @parameters email, password
  * @return User Object
@@ -15,7 +16,7 @@ const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    throw new CustomError("Email and password are required", 409);
+    throw new CustomError("Email and password are required", 400);
   }
 
   const user = await User.findOne({ email }).select("+password");
