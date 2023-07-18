@@ -3,7 +3,7 @@ import userRoutes from "./routes/user.route.js";
 import blogRoutes from "./routes/blog.route.js";
 import cors from "cors";
 import morgan from "morgan";
-import corsConfig from "./config/corsConfig.js"
+import corsConfig from "./config/cors.config.js"
 
 const app = express();
 app.use(express.json());
