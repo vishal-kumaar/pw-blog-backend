@@ -34,7 +34,7 @@ const register = asyncHandler(async (req, res) => {
   await user.save();
   user.password = undefined;
 
-  res.status(200).json({
+  return res.status(200).json({
     success: true,
     message: "User created successfully",
     token,

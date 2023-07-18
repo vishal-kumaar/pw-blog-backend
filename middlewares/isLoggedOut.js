@@ -6,10 +6,6 @@ import config from "../config/config.js";
 const isLoggedOut = asyncHandler(async (req, _res, next) => {
   const token = req.header("Authorization")?.replace("Bearer ", "");
 
-  if (!token) {
-    next();
-  }
-
   try {
     JWT.verify(token, config.jwtSecret);
     throw new CustomError("You are already logged in", 403);
