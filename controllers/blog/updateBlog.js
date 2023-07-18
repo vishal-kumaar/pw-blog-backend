@@ -7,7 +7,7 @@ import Blog from "../../schemas/blog.schema.js";
  * @method PATCH
  * @route /api/blog/:blogId
  * @description Update blog controller to update blog by blog id
- * @parameters title, desc, imgUrl, and content
+ * @parameters title, desc, imgUrl, content, and blog Id
  * @return Blog Object
  ************************************************/
 

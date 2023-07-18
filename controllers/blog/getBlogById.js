@@ -7,7 +7,7 @@ import Blog from "../../schemas/blog.schema.js";
  * @method GET
  * @route /api/blog/:blogId
  * @description Get blog by Id controller to get specific blog by blog id
- * @parameters none
+ * @parameters blog Id
  * @return Blog Object
  ************************************************/
 
