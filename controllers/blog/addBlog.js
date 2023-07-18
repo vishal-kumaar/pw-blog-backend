@@ -6,7 +6,7 @@ import Blog from "../../schemas/blog.schema.js";
  * @ADD_BLOG
  * @method POST
  * @route /api/blog/add
- * @description User add blog controller for creating a new blog
+ * @description Add blog controller for creating a new blog
  * @parameters user object, title, desc, imgUrl, and content
  * @return Blog Object
  ************************************************/

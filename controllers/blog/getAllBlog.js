@@ -6,7 +6,7 @@ import Blog from "../../schemas/blog.schema.js";
  * @GET_ALL_BLOG
  * @method GET
  * @route /api/blog
- * @description User get all blog controller for getting all the blogs
+ * @description Get all blog controller for getting all the blogs
  * @parameters none
  * @return Blogs Object
  ************************************************/
