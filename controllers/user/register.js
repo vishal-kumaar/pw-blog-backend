@@ -12,10 +12,14 @@ import User from "../../schemas/user.schema.js";
  *********************************************************/
 
 const register = asyncHandler(async (req, res) => {
+  if (req.user){
+    throw new CustomError("Already logged in", 303);
+  }
+
   const { name, email, password } = req.body;
 
-  if (!name || !email) {
-    throw new CustomError("Name and Email are required", 400);
+  if (!name || !email || !password) {
+    throw new CustomError("All fields are required", 400);
   }
 
   const existingUser = await User.findOne({ email });
