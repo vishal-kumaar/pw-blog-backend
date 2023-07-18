@@ -12,7 +12,6 @@ import Blog from "../../schemas/blog.schema.js";
  ************************************************/
 
 const updateBlog = asyncHanlder(async (req, res) => {
-  const { user } = req;
   const { blogId } = req.params;
   const { title, desc, imgUrl, content } = req.body;
 
@@ -21,14 +20,6 @@ const updateBlog = asyncHanlder(async (req, res) => {
   }
 
   const blog = await Blog.findById(blogId);
-
-  if (!blog) {
-    throw new CustomError("Blog not found", 404);
-  }
-
-  if (blog.authorId !== user._id){
-    throw new CustomError("You don't have permission to update this blog.", 403)
-  }
 
   blog.title = title;
   blog.desc = desc;
