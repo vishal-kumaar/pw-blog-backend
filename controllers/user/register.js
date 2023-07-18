@@ -34,7 +34,6 @@ const register = asyncHandler(async (req, res) => {
   await user.save();
   user.password = undefined;
 
-  req.headers['Authorization'] = `Bearer ${token}`;
   res.status(200).json({
     success: true,
     message: "User created successfully",

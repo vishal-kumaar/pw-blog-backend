@@ -33,7 +33,6 @@ const login = asyncHandler(async (req, res) => {
   const token = user.getJwtToken();
   user.password = undefined;
   
-  req.headers['Authorization'] = `Bearer ${token}`;
   res.status(200).json({
     success: true,
     message: "Login successful",
