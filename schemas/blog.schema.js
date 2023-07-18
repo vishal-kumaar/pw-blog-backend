@@ -22,6 +22,10 @@ const blogSchema = new mongoose.Schema(
       type: String,
       required: [true, "Blog content is required"],
     },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
   },
   {
     timestamps: true,
