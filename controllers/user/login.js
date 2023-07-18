@@ -1,7 +1,6 @@
 import asyncHandler from "../../utils/asyncHandler.js";
 import CustomError from "../../utils/CustomError.js";
 import User from "../../schemas/user.schema.js";
-import cookieOptions from "../../utils/cookieOptions.js";
 
 /********************************************************
  * @LOGIN
@@ -34,7 +33,7 @@ const login = asyncHandler(async (req, res) => {
   const token = user.getJwtToken();
   user.password = undefined;
   
-  res.cookie("token", token, cookieOptions);
+  req.headers['Authorization'] = `Bearer ${token}`;
   res.status(200).json({
     success: true,
     message: "Login successful",

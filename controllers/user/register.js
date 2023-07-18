@@ -1,7 +1,6 @@
 import asyncHandler from "../../utils/asyncHandler.js";
 import CustomError from "../../utils/CustomError.js";
 import User from "../../schemas/user.schema.js";
-import cookieOptions from "../../utils/cookieOptions.js";
 
 /********************************************************
  * @REGISTER
@@ -35,7 +34,7 @@ const register = asyncHandler(async (req, res) => {
   await user.save();
   user.password = undefined;
 
-  res.cookie("token", token, cookieOptions);
+  req.headers['Authorization'] = `Bearer ${token}`;
   res.status(200).json({
     success: true,
     message: "User created successfully",
