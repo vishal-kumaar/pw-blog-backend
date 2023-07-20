@@ -16,7 +16,7 @@ const updateBlog = asyncHanlder(async (req, res) => {
   const { title, desc, imgUrl, content } = req.body;
 
   if (!title || !imgUrl || !content) {
-    throw new CustomError("Title and content are required", 400);
+    throw new CustomError("Title, image and content are required", 400);
   }
 
   const blog = await Blog.findById(blogId);
