@@ -5,14 +5,16 @@ import Blog from "../../schemas/blog.schema.js";
 /***************************************************
  * @GET_BLOG_BY_USER_ID
  * @method GET
- * @route /api/myblog/:authorId
+ * @route /api/myblog
  * @description Get blogs by author Id controller to get blog of specific author
  * @parameters Author Id
  * @return Blogs Object
  ************************************************/
 
 const getBlogByAuthorId = asyncHanlder(async (req, res) => {
-  const { authorId } = req.params;
+  const { user } = req;
+  const authorId = user._id;
+
   const blogs = await Blog.find({authorId}).sort({ createdAt: -1 });
 
   if (blogs.length === 0) {

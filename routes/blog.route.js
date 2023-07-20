@@ -9,7 +9,7 @@ router.post("/blog/add", middleware.isLoggedIn, controllers.addBlog);
 router.get("/blog", controllers.getAllBlog);
 router.get("/blog/:blogId", controllers.getBlogById);
 router.get(
-  "/myblog/:authorId",
+  "/myblog",
   middleware.isLoggedIn,
   controllers.getBlogByAuthorId
 );
