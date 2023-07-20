@@ -30,6 +30,7 @@ const updateBlog = asyncHanlder(async (req, res) => {
 
   res.status(200).json({
     success: true,
+    message: "Blog updated successfully",   
     blog,
   });
 });
