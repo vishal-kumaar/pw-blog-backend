@@ -10,7 +10,7 @@ const blogSchema = new mongoose.Schema(
     },
     desc: {
       type: String,
-      maxLength: [100, "Description must be atmost 100 character"],
+      maxLength: [500, "Description must be atmost 500 character"],
       trim: true,
     },
     imgUrl: {
