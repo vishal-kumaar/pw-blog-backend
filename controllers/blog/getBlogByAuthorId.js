@@ -17,10 +17,6 @@ const getBlogByAuthorId = asyncHanlder(async (req, res) => {
 
   const blogs = await Blog.find({authorId}).sort({ createdAt: -1 });
 
-  if (blogs.length === 0) {
-    throw new CustomError("Blog not found", 404);
-  }
-
   res.status(200).json({
     success: true,
     blogs,

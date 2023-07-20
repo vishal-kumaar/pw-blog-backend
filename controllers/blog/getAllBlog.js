@@ -14,10 +14,6 @@ import Blog from "../../schemas/blog.schema.js";
 const getAllBlog = asyncHanlder(async (_req, res) => {
   const blogs = await Blog.find().sort({ createdAt: -1 });
 
-  if (blogs.length === 0) {
-    throw new CustomError("Blogs not found", 404);
-  }
-
   res.status(200).json({
     success: true,
     blogs,
